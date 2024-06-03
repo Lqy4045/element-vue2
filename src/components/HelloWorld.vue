@@ -103,12 +103,17 @@
 </template>
 
 <script>
+console.log("----------HelloWorld.vue start----------");
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
+  created() {
+    console.log("----------HelloWorld.vue created----------");
+  },
 };
+console.log("----------HelloWorld.vue end----------");
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

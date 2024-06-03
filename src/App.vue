@@ -7,7 +7,15 @@
     <router-view />
   </div>
 </template>
-
+<script>
+console.log("----------App.vue start----------");
+export default {
+  created() {
+    console.log("---------App.vue created---------");
+  },
+};
+console.log("----------App.vue end----------");
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

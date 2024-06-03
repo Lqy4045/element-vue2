@@ -1,10 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
-
+import { tableRouter } from "./modules/table";
+import { formRouter } from "./modules/form";
 Vue.use(VueRouter);
 
-const routes = [
+const constantRoutes = [
   {
     path: "/",
     name: "home",
@@ -20,11 +21,17 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
 ];
-
+export const asyncRoutes = [...tableRouter, ...formRouter];
+export const otherRoutes = [
+  {
+    path: "*",
+    component: () => import("@/views/404.vue"),
+  },
+];
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  constantRoutes,
 });
 
 export default router;
